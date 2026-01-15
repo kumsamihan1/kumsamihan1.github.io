@@ -1,0 +1,29 @@
+/* Top Strip */
+.top-strip {
+    background: linear-gradient(90deg, #ffd700, #ffb703);
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.top-strip h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Sections */
+.section {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #d97706;
+}
+
+/* Donation Section */
+.donation {
+    background: #f59e0b;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
