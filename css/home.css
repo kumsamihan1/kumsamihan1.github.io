@@ -1,26 +1,44 @@
-/* Header */
+/* Top Strip */
 .top-strip {
     background: linear-gradient(90deg, #ffd700, #ffb703);
     text-align: center;
-    padding: 50px 10px;
+    padding: 40px 10px;
 }
 
 .profile-img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    object-fit: cover;
     border: 4px solid white;
+    object-fit: cover;
 }
 
 .top-strip h1 {
-    margin: 10px 0 5px;
-    font-size: 38px;
+    font-size: 36px;
+    margin-top: 10px;
 }
 
-.tagline {
-    font-size: 16px;
-    font-style: italic;
+/* Banner */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5);
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
 }
 
 /* Sections */
@@ -31,27 +49,42 @@
 
 .section h2 {
     color: #d97706;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 /* About Grid */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .grid-box {
     background: white;
-    padding: 30px;
     border-radius: 12px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
     transition: transform 0.3s;
 }
 
 .grid-box:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+}
+
+.grid-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.grid-box h3 {
+    margin: 15px 0 5px;
+    color: #b45309;
+}
+
+.grid-box p {
+    padding: 0 15px 20px;
+    font-size: 14px;
 }
 
 /* Achievements */
@@ -63,10 +96,6 @@
     font-size: 48px;
     font-weight: bold;
     color: #b45309;
-}
-
-.achievement-text {
-    font-size: 18px;
 }
 
 /* Donation */
