@@ -1,113 +1,139 @@
-/* Top Strip */
-.top-strip {
+
+.top-strip
+{
     background: linear-gradient(90deg, #ffd700, #ffb703);
     text-align: center;
-    padding: 40px 10px;
+    padding: 50px 10px;
 }
 
-.profile-img {
-    width: 120px;
-    height: 120px;
+.header-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img 
+{
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     border: 4px solid white;
     object-fit: cover;
 }
 
-.top-strip h1 {
-    font-size: 36px;
-    margin-top: 10px;
+.top-strip h1 
+{
+    font-size: 34px;
+    margin: 10px 0 5px;
+    color: #78350f;
 }
 
-/* Banner */
-.banner {
-    position: relative;
+.header-quote 
+{
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
 }
 
-.banner img {
+
+.banner img 
+{
     width: 100%;
-    height: 320px;
+    height: 400px;
     object-fit: cover;
+    border-bottom: 4px solid #facc15;
 }
 
-.banner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.5);
-    padding: 20px 30px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-}
 
-/* Sections */
-.section {
+.section 
+{
     padding: 60px 10%;
     text-align: center;
 }
 
-.section h2 {
+.section h2 
+{
     color: #d97706;
     margin-bottom: 40px;
+    font-size: 28px;
 }
 
-/* About Grid */
+/* Grid Section */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    justify-content: center;
 }
 
+/* Grid Cards */
 .grid-box {
-    background: white;
+    background: #fffdf3;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding-bottom: 15px;
 }
 
 .grid-box:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* Fix Image Display */
 .grid-box img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: auto; /* Let the image maintain its aspect ratio */
+    max-height: 220px; /* Prevent overly tall images */
+    object-fit: contain; /* Show the full image without cropping */
+    background: #fff8e1; /* subtle backdrop if image doesn’t fill */
+    border-bottom: 3px solid #ffb703;
 }
 
+/* Text below each image */
 .grid-box h3 {
-    margin: 15px 0 5px;
+    margin: 15px 0 8px;
     color: #b45309;
+    font-size: 18px;
 }
 
 .grid-box p {
-    padding: 0 15px 20px;
-    font-size: 14px;
+    padding: 0 15px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
 }
 
 /* Achievements */
-.achievements {
-    background: #ffedd5;
+.achievements
+{
+    background: #fff3cd;
+    border-top: 2px solid #facc15;
 }
 
-.counter {
-    font-size: 48px;
+.counter 
+{
+    font-size: 52px;
     font-weight: bold;
     color: #b45309;
 }
 
-/* Donation */
-.donation {
+
+.donation 
+{
     background: #f59e0b;
     color: white;
-    padding: 50px 10%;
+    text-align: center;
+    padding: 60px 10%;
 }
 
-.qr-code {
-    width: 180px;
+.qr-code 
+{
+    width: 200px;
     margin-top: 20px;
-    border: 6px solid white;
+    border: 5px solid white;
     border-radius: 10px;
 }
