@@ -41,7 +41,7 @@
 .banner img 
 {
     width: 100%;
-    height: 400px;
+    height: 600%;
     object-fit: cover;
     border-bottom: 4px solid #facc15;
 }
@@ -72,7 +72,7 @@
 .grid-box {
     background: #fffdf3;
     border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     padding-bottom: 15px;
@@ -80,18 +80,46 @@
 
 .grid-box:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+/* Education Image */
+.education-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #eef6ff;
+    border-bottom: 3px solid #2563eb;
 }
 
-/* Fix Image Display */
-.grid-box img {
+/* Healthcare Image */
+.health-img {
     width: 100%;
-    height: auto; /* Let the image maintain its aspect ratio */
-    max-height: 220px; /* Prevent overly tall images */
-    object-fit: contain; /* Show the full image without cropping */
-    background: #fff8e1; /* subtle backdrop if image doesn’t fill */
-    border-bottom: 3px solid #ffb703;
+    height: 220px;
+    object-fit: contain;
+    background: #ecfdf5;
+    border-bottom: 3px solid #059669;
 }
+
+/* Food Distribution Image */
+.food-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #fff7ed;
+    border-bottom: 3px solid #ea580c;
+}
+
+/* Rural Development Image */
+.rural-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* looks better for landscape photos */
+    border-bottom: 3px solid #92400e;
+}
+
+
+/* Fix Image Display */
+
 
 /* Text below each image */
 .grid-box h3 {
