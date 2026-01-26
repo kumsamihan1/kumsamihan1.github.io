@@ -79,7 +79,7 @@
 }
 
 .grid-box:hover {
-    transform: translateY(-8px);
+    transform: scale(1.05);
     box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 /* Education Image */
@@ -87,6 +87,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+     object-position: center;
     background: #eef6ff;
     border-bottom: 3px solid #2563eb;
 }
@@ -97,6 +98,7 @@
     height: 250px;
     object-fit: cover;
     background: #ecfdf5;
+     object-position: center;
     border-bottom: 3px solid #059669;
 }
 
@@ -106,6 +108,7 @@
     height: 250px;
     object-fit: cover;
     background: #fff7ed;
+    object-position: center;
     border-bottom: 3px solid #ea580c;
 }
 
@@ -114,6 +117,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover; /* looks better for landscape photos */
+    object-position: center;
     border-bottom: 3px solid #92400e;
 }
 
@@ -122,6 +126,8 @@
     margin: 15px 0 8px;
     color: #b45309;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-box p {
@@ -129,6 +135,7 @@
     font-size: 15px;
     line-height: 1.5;
     color: #444;
+    flex-grow: 1;
 }
 
 
