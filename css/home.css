@@ -3,7 +3,7 @@
 {
     background: linear-gradient(90deg, #ffd700, #ffb703);
     text-align: center;
-    padding: 50px 10px;
+    padding: 50px 7px;
 }
 
 .header-content
@@ -41,7 +41,7 @@
 .banner img 
 {
     width: 100%;
-    height: 600%;
+    height: 300%;
     object-fit: cover;
     border-bottom: 4px solid #facc15;
 }
@@ -75,7 +75,7 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .grid-box:hover {
@@ -85,7 +85,7 @@
 /* Education Image */
 .education-img {
     width: 100%;
-    height: 250px;
+    height: 320px;
     object-fit: cover;
      object-position: center;
     background: #eef6ff;
@@ -95,7 +95,7 @@
 /* Healthcare Image */
 .health-img {
     width: 100%;
-    height: 250px;
+    height: 320px;
     object-fit: cover;
     background: #ecfdf5;
      object-position: center;
@@ -105,7 +105,7 @@
 /* Food Distribution Image */
 .food-img {
     width: 100%;
-    height: 250px;
+    height: 320px;
     object-fit: cover;
     background: #fff7ed;
     object-position: center;
@@ -115,7 +115,7 @@
 /* Rural Development Image */
 .rural-img {
     width: 100%;
-    height: 250px;
+    height: 320px;
     object-fit: cover; /* looks better for landscape photos */
     object-position: center;
     border-bottom: 3px solid #92400e;
