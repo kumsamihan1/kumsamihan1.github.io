@@ -1,111 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dr Panjabrao Kathe Foundation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Dr Panjabrao Kathe Foundation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/home.css">
+<style>
+/* ========== GLOBAL ========== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fffaf0;
+    color: #333;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: #facc15;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #78350f;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #78350f;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #b45309;
+}
+
+/* ========== HEADER ========== */
+.top-strip {
+    background: linear-gradient(90deg, #ffd700, #ffb703);
+    text-align: center;
+    padding: 55px 10px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+.top-strip h1 {
+    font-size: 36px;
+    margin: 10px 0 5px;
+    color: #78350f;
+}
+
+.header-quote {
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
+}
+
+/* ========== BANNER ========== */
+.banner img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-bottom: 4px solid #facc15;
+}
+
+/* ========== SECTIONS ========== */
+.section {
+    padding: 65px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #d97706;
+    margin-bottom: 45px;
+    font-size: 28px;
+}
+
+/* ========== GRID ========== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+/* Grid Card */
+.grid-box {
+    background: #fffdf3;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* FORCE FULL IMAGE COVER */
+.grid-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Individual Borders */
+.education-img { border-bottom: 4px solid #2563eb; }
+.health-img    { border-bottom: 4px solid #059669; }
+.food-img      { border-bottom: 4px solid #ea580c; }
+.rural-img     { border-bottom: 4px solid #92400e; }
+
+.grid-box h3 {
+    margin: 18px 0 10px;
+    color: #b45309;
+    font-size: 19px;
+}
+
+.grid-box p {
+    padding: 0 18px 25px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #444;
+}
+
+/* ========== ACHIEVEMENTS ========== */
+.achievements {
+    background: #fff3cd;
+    border-top: 2px solid #facc15;
+}
+
+.counter {
+    font-size: 54px;
+    font-weight: bold;
+    color: #b45309;
+}
+
+/* ========== DONATION ========== */
+.donation {
+    background: #f59e0b;
+    color: white;
+    padding: 65px 10%;
+}
+
+.qr-code {
+    width: 210px;
+    margin-top: 25px;
+    border: 6px solid white;
+    border-radius: 12px;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: #78350f;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 35px 10%;
+}
+
+.footer-column {
+    max-width: 420px;
+}
+
+.footer a {
+    color: #fde68a;
+    text-decoration: none;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-title">Kathe Foundation</div>
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="impact.html">About Us</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
         <li><a href="#donate">Donate</a></li>
     </ul>
 </nav>
 
-<!-- HEADER / TOP STRIP -->
-<header class="top-strip" id="home">
+<header class="top-strip">
     <div class="header-content">
-        <img src="images/panjabrao_kathe.png" alt="Dr Panjabrao Kathe Foundation" class="profile-img">
+        <img src="images/panjabrao_kathe.png" class="profile-img">
         <h1>Dr Panjabrao Kathe Foundation</h1>
         <p class="header-quote">“Service to humanity is service to God.”</p>
     </div>
 </header>
 
-<!-- BANNER -->
 <section class="banner">
-    <img src="images/heading.png" alt="Banner">
+    <img src="images/heading.png">
 </section>
 
-<!-- ABOUT US -->
-<section class="section" id="about">
-    <h2>About Us</h2>
+<section class="section">
+<h2>About Us</h2>
 <div class="grid-container">
 
-    <div class="grid-box education-box">
-        <img src="images/education.png" alt="Education Support" class="education-img">
-        <h3>Education Support</h3>
-        <p>Providing educational assistance, resources, and guidance to underprivileged students.</p>
-    </div>
-
-    <div class="grid-box health-box">
-        <img src="images/health.png" alt="Healthcare Services" class="health-img">
-        <h3>Healthcare Services</h3>
-        <p>Organizing medical camps, health awareness programs, and healthcare support.</p>
-    </div>
-
-    <div class="grid-box food-box">
-        <img src="images/food_dist.png" alt="Food Distribution" class="food-img">
-        <h3>Food Distribution</h3>
-        <p>Ensuring no one sleeps hungry through regular food distribution drives.</p>
-    </div>
-
-    <div class="grid-box rural-box">
-        <img src="images/rural.jpg" alt="Rural Development" class="rural-img">
-        <h3>Rural Development</h3>
-        <p>Supporting rural upliftment through infrastructure and sustainability.</p>
-    </div>
-
+<div class="grid-box">
+<img src="images/education.png" class="education-img">
+<h3>Education Support</h3>
+<p>Providing educational assistance, resources, and guidance to underprivileged students.</p>
 </div>
 
+<div class="grid-box">
+<img src="images/health.png" class="health-img">
+<h3>Healthcare Services</h3>
+<p>Organizing medical camps, health awareness programs, and healthcare support.</p>
+</div>
+
+<div class="grid-box">
+<img src="images/food_dist.png" class="food-img">
+<h3>Food Distribution</h3>
+<p>Ensuring no one sleeps hungry through regular food distribution drives.</p>
+</div>
+
+<div class="grid-box">
+<img src="images/rural.jpg" class="rural-img">
+<h3>Rural Development</h3>
+<p>Supporting rural upliftment through infrastructure and sustainability.</p>
+</div>
+
+</div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section class="section achievements">
-    <h2>Our Achievements</h2>
-    <div class="counter" data-target="10000">10,000+</div>
-    <p class="achievement-text">People Benefited Through Our Social Services</p>
+<h2>Our Achievements</h2>
+<div class="counter" id="counter">0</div>
+<p>People Benefited Through Our Social Services</p>
 </section>
 
-<!-- DONATION -->
 <section class="donation" id="donate">
-    <h2>Support Our Cause</h2>
-    <p>Scan the QR code below to donate</p>
-    <img src="images/qr.png" alt="Donation QR Code" class="qr-code">
+<h2>Support Our Cause</h2>
+<p>Scan the QR code below to donate</p>
+<img src="images/qr.png" class="qr-code">
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-    <div class="footer-column">
-        <h3>About Us</h3>
-        <p>
-            Dr Panjabrao Kathe Foundation is committed to social service,
-            community welfare, and inclusive development inspired by
-            the vision of Dr Panjabrao Kathe.
-        </p>
-    </div>
+<div class="footer-column">
+<h3>About Us</h3>
+<p>Committed to social service, community welfare, and inclusive development inspired by Dr Panjabrao Kathe.</p>
+</div>
 
-    <div class="footer-column">
-        <h3>Contact Us</h3>
-        <p>Email: info@drpanjabraokathefoundation.org</p>
-        <p>Contact No: 7777788888</p>
-        <p>
-            Facebook:
-            <a href="https://www.facebook.com/profpanjabkathe/" target="_blank">
-                Visit Page
-            </a>
-        </p>
-    </div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<p>Email: info@drpanjabraokathefoundation.org</p>
+<p>Contact: 7777788888</p>
+</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+let counter = document.getElementById("counter");
+let target = 10000;
+let count = 0;
+
+function animateCounter() {
+    count += 120;
+    if (count < target) {
+        counter.innerText = count;
+        setTimeout(animateCounter, 30);
+    } else {
+        counter.innerText = target + "+";
+    }
+}
+window.onload = animateCounter;
+</script>
+
 </body>
 </html>
