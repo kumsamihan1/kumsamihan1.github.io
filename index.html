@@ -189,12 +189,13 @@ margin: 10px auto 0;
     }
 /* ------------------ GRID ------------------ */
 .grid-container {
-display: grid;
-grid-template-columns: 1fr;
-max-width: 900px;
+display: flex;
+flex-direction: column;
+max-width: 1200px;
 margin: 0 auto;
-gap: 40px;
+gap: 60px;
     }
+
 .grid-box {
 background: var(--white);
 border-radius: 12px;
@@ -203,34 +204,73 @@ box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 border: 1px solid rgba(0,0,0,0.05);
 opacity: 0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+min-height: 400px;
     }
+
+.grid-box:nth-child(even) {
+direction: rtl;
+    }
+
+.grid-box:nth-child(even) > * {
+direction: ltr;
+    }
+
 .grid-box:hover,
 .grid-box:focus-within {
 transform: translateY(-5px);
 box-shadow: var(--shadow-hover);
     }
+
 .card-img {
 width: 100%;
-height: 350px;
+height: 100%;
+min-height: 400px;
 object-fit: cover;
 display: block;
     }
+
 .border-blue { border-bottom: 4px solid #2563eb; }
 .border-green { border-bottom: 4px solid #059669; }
 .border-orange { border-bottom: 4px solid #ea580c; }
 .border-brown { border-bottom: 4px solid #92400e; }
-.grid-box h3 {
-margin: 25px 30px 15px;
-color: var(--dark-brown);
-font-size: 26px;
+
+.grid-text {
+padding: 40px;
     }
+
+.grid-box h3 {
+margin: 0 0 15px 0;
+color: var(--dark-brown);
+font-size: 28px;
+    }
+
 .grid-box p {
-padding: 0 30px 30px;
+padding: 0;
 font-size: 18px;
 color: #555;
 margin: 0;
-line-height: 1.7;
+line-height: 1.8;
     }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+.grid-box {
+grid-template-columns: 1fr;
+min-height: auto;
+    }
+    
+.grid-box:nth-child(even) {
+direction: ltr;
+    }
+    
+.card-img {
+min-height: 300px;
+    }
+    }
+
 /* ------------------ ACHIEVEMENTS ------------------ */
 .achievements {
 background: #fff3cd;
@@ -370,8 +410,7 @@ display: none;
     animation: slideInLeft 0.8s ease-out forwards;
 }
 
-.grid-box:nth-child(odd).animate h3,
-.grid-box:nth-child(odd).animate p {
+.grid-box:nth-child(odd).animate .grid-text {
     animation: slideInRight 0.8s ease-out forwards;
     animation-delay: 0.2s;
     opacity: 0;
@@ -382,8 +421,7 @@ display: none;
     animation: slideInRight 0.8s ease-out forwards;
 }
 
-.grid-box:nth-child(even).animate h3,
-.grid-box:nth-child(even).animate p {
+.grid-box:nth-child(even).animate .grid-text {
     animation: slideInLeft 0.8s ease-out forwards;
     animation-delay: 0.2s;
     opacity: 0;
@@ -418,23 +456,31 @@ display: none;
 <div class="grid-container">
 <article class="grid-box">
 <img src="images/education.png" class="card-img border-blue" alt="Students learning in classroom" loading="lazy">
+<div class="grid-text">
 <h3>Education Support</h3>
 <p>Providing scholarships, stationery, and guidance to underprivileged students in rural areas.</p>
+</div>
 </article>
 <article class="grid-box">
 <img src="images/health.png" class="card-img border-green" alt="Healthcare professionals at medical camp" loading="lazy">
+<div class="grid-text">
 <h3>Healthcare Services</h3>
 <p>Organizing free medical camps, blood donation drives, and health awareness programs.</p>
+</div>
 </article>
 <article class="grid-box">
 <img src="images/food_dist.png" class="card-img border-orange" alt="Food distribution to community members" loading="lazy">
+<div class="grid-text">
 <h3>Food Distribution</h3>
 <p>Ensuring food security for the homeless and needy through regular donation drives.</p>
+</div>
 </article>
 <article class="grid-box">
 <img src="https://placehold.co/600x400/92400e/FFF?text=Rural" class="card-img border-brown" alt="Rural development project in progress" loading="lazy">
+<div class="grid-text">
 <h3>Rural Development</h3>
 <p>Supporting infrastructure, water conservation, and sustainable farming practices.</p>
+</div>
 </article>
 </div>
 </section>
