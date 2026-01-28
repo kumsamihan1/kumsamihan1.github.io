@@ -200,6 +200,7 @@ overflow: hidden;
 box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 border: 1px solid rgba(0,0,0,0.05);
+opacity: 0;
     }
 .grid-box:hover,
 .grid-box:focus-within {
@@ -319,6 +320,57 @@ opacity: 1;
 display: none;
         }
     }
+
+/* ------------------ ANIMATIONS ------------------ */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.grid-box.animate {
+    opacity: 1;
+}
+
+/* Odd boxes (1st, 3rd) - image from left, text from right */
+.grid-box:nth-child(odd).animate img {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.grid-box:nth-child(odd).animate h3,
+.grid-box:nth-child(odd).animate p {
+    animation: slideInRight 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+/* Even boxes (2nd, 4th) - image from right, text from left */
+.grid-box:nth-child(even).animate img {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.grid-box:nth-child(even).animate h3,
+.grid-box:nth-child(even).animate p {
+    animation: slideInLeft 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
 </style>
 </head>
 <body>
@@ -400,5 +452,32 @@ display: none;
 </p>
 </div>
 </footer>
+
+<script>
+// Intersection Observer to trigger animations when section is visible
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const boxes = entry.target.querySelectorAll('.grid-box');
+            boxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.classList.add('animate');
+                }, index * 150); // Stagger each box by 150ms
+            });
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe the initiatives section
+const initiativesSection = document.querySelector('#initiatives-heading').parentElement;
+observer.observe(initiativesSection);
+</script>
+
 </body>
 </html>
