@@ -2,274 +2,352 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Panjabrao Kathe Foundation</title>
+<meta name="description" content="Panjabrao Kathe Foundation - Dedicated to education, healthcare, and rural development.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panjabrao Kathe Foundation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ------------------ GLOBAL ------------------ */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fffaf0;
-    color: #333;
-}
+    /* ------------------ VARIABLES & RESET ------------------ */
+    :root {
+        --primary-gold: #ffd700;
+        --secondary-gold: #ffb703;
+        --accent-orange: #d97706;
+        --dark-brown: #78350f;
+        --text-dark: #333;
+        --bg-cream: #fffaf0;
+        --white: #ffffff;
+        --shadow-hover: 0 10px 22px rgba(0,0,0,0.15);
+    }
 
-/* ------------------ TOP THIN STRIP ------------------ */
-.top-strip {
-    background: linear-gradient(90deg, #ffd700, #ffb703);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 6%;
-    height: 100px;
-}
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: var(--bg-cream);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
 
-/* Left Image */
-.strip-left img {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-}
+    h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+    }
 
-/* Center Heading */
-.strip-center h1 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: bold;
-    color: #78350f;
-    text-align: center;
-}
+    /* ------------------ HEADER ------------------ */
+    .top-strip {
+        background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 6%;
+        min-height: 70px; /* Changed to min-height for mobile wrapping */
+        flex-wrap: wrap;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-/* Right Section */
-.strip-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    .strip-left img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--white);
+    }
 
-.strip-right a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #78350f;
-}
+    .strip-center h1 {
+        margin: 0;
+        font-size: 24px; /* Increased slightly */
+        font-weight: 700;
+        color: var(--dark-brown);
+        text-align: center;
+        text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+    }
 
-.strip-right a:hover {
-    color: #b45309;
-}
+    .strip-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 
-.strip-right img {
-    width: 46px;
-    height: 46px;
-    object-fit: contain;
-}
+    .strip-right a {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--dark-brown);
+        transition: color 0.3s;
+    }
 
-/* ------------------ LARGE BANNER ------------------ */
-.banner img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 4px solid #facc15;
-}
+    .strip-right a:hover {
+        color: #fff;
+    }
 
-/* ------------------ SECTION ------------------ */
-.section {
-    padding: 60px 10%;
-    text-align: center;
-}
+    .strip-right img {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+    }
 
-.section h2 {
-    color: #d97706;
-    font-size: 28px;
-    margin-bottom: 40px;
-}
+    /* Mobile adjustments for header */
+    @media (max-width: 768px) {
+        .top-strip {
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+        }
+        .strip-center h1 {
+            font-size: 20px;
+        }
+    }
 
-/* ------------------ GRID ------------------ */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
+    /* ------------------ BANNER ------------------ */
+    .banner {
+        position: relative;
+    }
 
-.grid-box {
-    background: #fffdf3;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    .banner img {
+        width: 100%;
+        height: 500px; /* Consider using vh units like 60vh for responsiveness */
+        object-fit: cover;
+        display: block;
+        border-bottom: 5px solid var(--secondary-gold);
+    }
 
-.grid-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
-}
+    .banner-overlay {
+        position: absolute;
+        bottom: 20px;
+        left: 6%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-/* Individual Image Control */
-.education-img,
-.health-img,
-.food-img,
-.rural-img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-}
+    /* ------------------ SECTIONS ------------------ */
+    .section {
+        padding: 60px 10%;
+        text-align: center;
+    }
 
-/* Borders per section */
-.education-img { border-bottom: 4px solid #2563eb; }
-.health-img { border-bottom: 4px solid #059669; }
-.food-img { border-bottom: 4px solid #ea580c; }
-.rural-img { border-bottom: 4px solid #92400e; }
+    .section h2 {
+        color: var(--accent-orange);
+        font-size: 32px;
+        margin-bottom: 50px;
+        position: relative;
+        display: inline-block;
+    }
 
-.grid-box h3 {
-    margin: 15px 0 8px;
-    color: #b45309;
-}
+    /* Decorative underline for headings */
+    .section h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--dark-brown);
+        margin: 10px auto 0;
+    }
 
-.grid-box p {
-    padding: 0 15px 20px;
-    font-size: 15px;
-    line-height: 1.5;
-}
+    /* ------------------ GRID ------------------ */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
 
-/* ------------------ ACHIEVEMENTS ------------------ */
-.achievements {
-    background: #fff3cd;
-    border-top: 2px solid #facc15;
-}
+    .grid-box {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
 
-.counter {
-    font-size: 52px;
-    font-weight: bold;
-    color: #b45309;
-}
+    .grid-box:hover {
+        transform: translateY(-5px); /* Lift effect */
+        box-shadow: var(--shadow-hover);
+    }
 
-/* ------------------ DONATION ------------------ */
-.donation {
-    background: #f59e0b;
-    color: white;
-    padding: 60px 10%;
-}
+    .card-img {
+        width: 100%;
+        height: 220px; /* Adjusted height for better balance */
+        object-fit: cover;
+    }
 
-.qr-code {
-    width: 200px;
-    margin-top: 20px;
-    border: 5px solid white;
-    border-radius: 10px;
-}
+    /* Color coding borders */
+    .border-blue { border-bottom: 4px solid #2563eb; }
+    .border-green { border-bottom: 4px solid #059669; }
+    .border-orange { border-bottom: 4px solid #ea580c; }
+    .border-brown { border-bottom: 4px solid #92400e; }
 
-/* ------------------ FOOTER ------------------ */
-.footer {
-    background: #78350f;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 30px 10%;
-}
+    .grid-box h3 {
+        margin: 20px 0 10px;
+        color: var(--dark-brown);
+        font-size: 20px;
+    }
 
-.footer-column {
-    max-width: 400px;
-}
+    .grid-box p {
+        padding: 0 20px 25px;
+        font-size: 15px;
+        color: #555;
+    }
 
-.footer a {
-    color: #fde68a;
-    text-decoration: none;
-}
+    /* ------------------ ACHIEVEMENTS ------------------ */
+    .achievements {
+        background: #fff3cd;
+        border-top: 2px solid var(--primary-gold);
+    }
+
+    .counter {
+        font-size: 60px;
+        font-weight: 800;
+        color: var(--dark-brown);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* ------------------ DONATION ------------------ */
+    .donation {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        color: white;
+        padding: 60px 10%;
+    }
+
+    .qr-container {
+        background: white;
+        padding: 15px;
+        display: inline-block;
+        border-radius: 10px;
+        margin-top: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .qr-code {
+        width: 180px;
+        display: block;
+    }
+
+    /* ------------------ FOOTER ------------------ */
+    .footer {
+        background: var(--dark-brown);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 50px 10%;
+        gap: 30px;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer h3 {
+        color: var(--primary-gold);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .footer a {
+        color: var(--secondary-gold);
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
 </style>
 </head>
 
 <body>
 
-<!-- THIN STRIP -->
-<header class="top-strip">
-    <div class="strip-left">
-        <img src="images/panjabrao_kathe.png" alt="Panjabrao Kathe">
-    </div>
+    <header class="top-strip">
+        <div class="strip-left">
+            <img src="https://placehold.co/100x100/78350f/FFF?text=PK" alt="Panjabrao Kathe">
+        </div>
 
-    <div class="strip-center">
-        <h1>Panjabrao Kathe Foundation</h1>
-    </div>
+        <div class="strip-center">
+            <h1>Panjabrao Kathe Foundation</h1>
+        </div>
 
-    <div class="strip-right">
-        <a href="impact.html">About</a>
-        <img src="images/Kathe_logo.png" alt="Kathe Logo">
-    </div>
-</header>
+        <div class="strip-right">
+            <a href="impact.html">Our Impact</a>
+            <img src="https://placehold.co/100x100/transparent/FFF?text=Logo" alt="Kathe Logo">
+        </div>
+    </header>
 
-<!-- BANNER -->
-<section class="banner">
-    <img src="images/heading.png" alt="Banner Image">
-</section>
+    <main>
+        <section class="banner">
+            <img src="https://placehold.co/1200x500/facc15/78350f?text=Empowering+Communities" alt="Foundation Banner">
+            <div class="banner-overlay">
+                <h3>Servicing Humanity</h3>
+                <p>Join us in making a difference today.</p>
+            </div>
+        </section>
 
-<!-- ABOUT US -->
-<section class="section">
-<h2>About Us</h2>
+        <section class="section">
+            <h2>Our Core Initiatives</h2>
 
-<div class="grid-container">
+            <div class="grid-container">
+                <div class="grid-box">
+                    <img src="https://placehold.co/600x400/2563eb/FFF?text=Education" class="card-img border-blue" alt="Education">
+                    <h3>Education Support</h3>
+                    <p>Providing scholarships, stationary, and guidance to underprivileged students in rural areas.</p>
+                </div>
 
-<div class="grid-box">
-    <img src="images/education.png" class="education-img">
-    <h3>Education Support</h3>
-    <p>Providing educational assistance, resources, and guidance to underprivileged students.</p>
-</div>
+                <div class="grid-box">
+                    <img src="https://placehold.co/600x400/059669/FFF?text=Health" class="card-img border-green" alt="Healthcare">
+                    <h3>Healthcare Services</h3>
+                    <p>Organizing free medical camps, blood donation drives, and health awareness programs.</p>
+                </div>
 
-<div class="grid-box">
-    <img src="images/health.png" class="health-img">
-    <h3>Healthcare Services</h3>
-    <p>Organizing medical camps, health awareness programs, and healthcare support.</p>
-</div>
+                <div class="grid-box">
+                    <img src="https://placehold.co/600x400/ea580c/FFF?text=Food" class="card-img border-orange" alt="Food Distribution">
+                    <h3>Food Distribution</h3>
+                    <p>Ensuring food security for the homeless and needy through regular donation drives.</p>
+                </div>
 
-<div class="grid-box">
-    <img src="images/food_dist.png" class="food-img">
-    <h3>Food Distribution</h3>
-    <p>Ensuring no one sleeps hungry through regular food distribution drives.</p>
-</div>
+                <div class="grid-box">
+                    <img src="https://placehold.co/600x400/92400e/FFF?text=Rural" class="card-img border-brown" alt="Rural Development">
+                    <h3>Rural Development</h3>
+                    <p>Supporting infrastructure, water conservation, and sustainable farming practices.</p>
+                </div>
+            </div>
+        </section>
 
-<div class="grid-box">
-    <img src="images/rural.jpg" class="rural-img">
-    <h3>Rural Development</h3>
-    <p>Supporting rural upliftment through infrastructure and sustainability.</p>
-</div>
+        <section class="section achievements">
+            <h2>Our Impact</h2>
+            <div class="counter">10,000+</div>
+            <p>Lives Touched Through Our Social Services</p>
+        </section>
 
-</div>
-</section>
+        <section class="donation">
+            <h2>Support Our Cause</h2>
+            <p>Your contribution can change a life. Scan to donate via UPI.</p>
+            <div class="qr-container">
+                <img src="https://placehold.co/200x200/000/FFF?text=QR+Code" class="qr-code" alt="Donation QR Code">
+            </div>
+        </section>
+    </main>
 
-<!-- ACHIEVEMENTS -->
-<section class="section achievements">
-<h2>Our Achievements</h2>
-<div class="counter">10,000+</div>
-<p>People Benefited Through Our Social Services</p>
-</section>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>About The Foundation</h3>
+            <p>
+                Dr Panjabrao Kathe Foundation is a registered non-profit committed to social service, 
+                community welfare, and inclusive development across the region.
+            </p>
+        </div>
 
-<!-- DONATION -->
-<section class="donation">
-<h2>Support Our Cause</h2>
-<p>Scan the QR code below to donate</p>
-<img src="images/qr.png" class="qr-code">
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<div class="footer-column">
-<h3>About Us</h3>
-<p>
-Dr Panjabrao Kathe Foundation is committed to social service,
-community welfare, and inclusive development.
-</p>
-</div>
-
-<div class="footer-column">
-<h3>Contact Us</h3>
-<p>Email: info@drpanjabraokathefoundation.org</p>
-<p>Contact No: 7777788888</p>
-<p>
-Facebook:
-<a href="https://www.facebook.com/profpanjabkathe/" target="_blank">Visit Page</a>
-</p>
-</div>
-</footer>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> info@drpanjabraokathefoundation.org</p>
+            <p><strong>Phone:</strong> +91 77777 88888</p>
+            <p>
+                <strong>Social:</strong> 
+                <a href="https://www.facebook.com/profpanjabkathe/" target="_blank">Facebook Page</a>
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
